@@ -1,0 +1,15 @@
+<div class="border">
+
+
+  <h1>Mine Shinto Coins</h1>
+  <h3>Here you can mine Shinto Coins by being the first to solve the algorithm:</h3>
+  <div *ngIf="!answered">
+    <p *ngIf="mistake">Oops! Try again!</p>
+    <h5>What is the 7th number in the Fibonacci Sequence?</h5>
+    <form *ngIf="!answered" (submit)="mineCoin()">
+      <input type="string" name="answer" [(ngModel)]="answer">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <p *ngIf="answered">You've solved the algorithm for today! Come back later for another.</p>
+</div>

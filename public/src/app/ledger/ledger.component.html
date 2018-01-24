@@ -1,0 +1,27 @@
+<div class="border">
+  <h1>Browse the Ledger</h1>
+  <h3>Here you can browse all the ShintoCoin transactions!</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Amount</th>
+        <th>Value</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let tx of transactions">
+        <td>{{tx.action}}</td>
+        <td>{{tx.amount}}</td>
+        <td>{{tx.value}}</td>
+        <td><a [routerLink]="['/transaction', tx.id]">Details</a></td>
+        <!-- <td><button (click)="seeDetails(tx.id)">Details</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+  <!-- <button (click)="seeDetails('33')">Details 33</button>
+  <button (click)="seeDetails('34')">Details 34</button>
+  <button (click)="seeDetails('23')">Details 23</button> -->
+  {{transactions | json}}
+</div>
